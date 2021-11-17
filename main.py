@@ -15,13 +15,15 @@ tim.width(10)
 
 # challenge 4 random walk
 
-random_heading = random.randint(1, 270)
-random_color = (124, 245, 243)
 
-for _ in range(10):
-    tim.color(random_color)
+
+for _ in range(100):
+    random_heading = random.randint(1, 270)
+    random_color = random.randint(0, 255)
+    tim.pencolor(240, 160, 80)
     tim.forward(10)
     tim.setheading(random_heading)
+    tim.forward(10)
 
 # challenge 3
 # from 3 through 11
