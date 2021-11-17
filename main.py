@@ -6,24 +6,46 @@
 # # import module as a shorter alias so it's easier to reference.
 # import turtle as t
 # from the turtle module, import the classes Turtle and Screen
+import turtle
 from turtle import Turtle, Screen
 import random
+import numpy as np
+
+turtle.colormode(255)
 tim = Turtle()
 tim.shape("turtle")
-tim.color("deep pink")
-tim.width(10)
+tim.speed('fastest')
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    colors = (r, g, b)
+    return colors
+
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360 / size_of_gap)):
+        tim.color(random_color())
+        tim.circle(100)
+        tim.setheading(tim.heading() + size_of_gap)
+
+draw_spirograph(5)
+
+# draw a spirograph
 
 # challenge 4 random walk
-
-
-
-for _ in range(100):
-    random_heading = random.randint(1, 270)
-    random_color = random.randint(0, 255)
-    tim.pencolor(240, 160, 80)
-    tim.forward(10)
-    tim.setheading(random_heading)
-    tim.forward(10)
+#
+# tim.width(15)
+# tim.speed('fastest')
+# directions = [0, 90, 180, 270]
+#
+# for _ in range(300):
+#     random_heading = random.choice(directions)
+#     # random_color = list(np.random.choice(range(255), size=3))
+#     tim.pencolor(random_color())
+#     tim.color(random_color())
+#     tim.forward(30)
+#     tim.setheading(random_heading)
 
 # challenge 3
 # from 3 through 11
